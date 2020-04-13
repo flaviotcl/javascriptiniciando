@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /**
+        const a =  (num1 , num2) => {
+            console.log(num1+num2)
+        }
+        a(5,5)
+        **/
+        function person(){
+            this.age = 21
+            console.log(this.age)
+            
+            setTimeout(function(){
+                this.age++
+                console.log('Não consigo acessar a variável de escopo global this.age da function person(), logo retorna: '+ this.age)
+            },3000)
+            // Ao utilizar arrow function consigo acessar o valor do escopo global de this.age da function person(), logo o resultado será o incremento da variável.
+            setTimeout( () => {
+                this.age++
+                console.log('Consigo acessar a variável global this.age da function person() através da arrow function, logo retorna o incremento da variável : '+this.age)
+            },3000)
+        }
+        const joao = new person()
+    </script>
+</body>
+</html>
