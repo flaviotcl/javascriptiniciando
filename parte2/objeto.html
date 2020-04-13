@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let person  = {name: 'Paulo', age: 35, height: 1.70, weight: 90}
+        console.log(person.name)
+        //console.log(person['name'])
+
+        // Outra forma de criar objetos seria:
+
+        let pessoa = {}
+
+        pessoa.name = 'Leonan'
+        pessoa.age = 21
+        pessoa.height = 1.78
+        pessoa.weight = 108
+        pessoa.getImc = () => {
+            let result = pessoa.weight/(pessoa.height*pessoa.height)
+            return console.log('IMC => '+result)
+        }
+        //console.log(pessoa)
+         pessoa.getImc()
+
+         // Construindo um Array de objetos
+         let arr = [{
+             name: 'Flavio',
+             sobrenome: 'Tavares',
+             age: 33,
+             altura: 1.78
+         }]
+
+         arr.push({ name: 'Robert' , sobrenome: 'Costa' , age: 45,  altura: 1.76})
+         console.log(arr)
+
+    </script>
+</body>
+</html>
