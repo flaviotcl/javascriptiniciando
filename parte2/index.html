@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /**
+         * function funcName(name){
+            console.log('Hello ' + name + ' from School of Net')
+        }
+        funcName('Leonan')
+        **/
+        
+        /** Passagem de parâmetro com valor padrão default
+        const funcName = function funcName(name =' Erik'){
+            console.log('Hello ' + name + ' from School of Net')
+            // Este exemplo nos colocaria em Loop infinito até o estouro da Pilha.
+            return funcName()
+        }
+        funcName()
+        **/
+       function fatorial(num){
+            if (num ==1){
+                return 1;
+            }else{
+                return num * fatorial(num -1)
+            }
+       }
+        var result = fatorial(5)
+        console.log('Result -> ', result)
+    </script>
+</body>
+</html>

@@ -1,0 +1,51 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /**
+        setTimeout( function(){
+            console.log('Hello from async Function')
+        },10000)
+        **/
+        /**
+        setTimeout(function cbFunc(){
+            console.log('Hello, após 5 segundos ' + str)
+        },5000, str='Assíncrono')
+
+        console.log('1')
+        console.log('2')
+        console.log('3')
+
+        **/
+        
+        function cbFunc( str01 ){
+            console.log('Fluxo '+ str01 +', Hello após 10 segundos, em Processamento paralelo !')
+        }
+        setTimeout(cbFunc, 10000, 'Assíncrono')
+
+        console.log('1')
+        console.log('2')
+        console.log('3')
+        
+       function sayHello(cb){
+           return cb('Hello from call back function')
+       }
+       console.log('Fluxo Síncrono, neste exemplo NÃO foi necessário processamemto paralelo p/ exbibir nosso resultado !')
+       console.log('Console Log 1')
+
+       sayHello(function(str){ 
+            console.log(str)
+        })
+
+       console.log('Console Log 2')
+
+       
+    </script>
+</body>
+</html>
