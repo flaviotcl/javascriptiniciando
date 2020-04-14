@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="btn">Click Me</button>
+    <script>
+            document.addEventListener('DOMContentLoaded', function(){
+                console.log('Online')
+            })
+            /** Esse evento onload só será executado após todo conteúdo da página(body) ser carregado !
+            document.body.onload = function(){
+                if(navigator.onLine){
+                    alert('Online')
+                }else{
+                    alert('Offline')
+                }
+            }**/
+            const button = document.getElementById('btn')
+            function clickMe(){
+                alert('Hello Custom Function')
+            }
+            button.addEventListener('click', clickMe)
+    </script>
+</body>
+</html>
