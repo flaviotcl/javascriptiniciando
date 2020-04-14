@@ -4,6 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        .error{
+            color:red;
+            padding: "1em 0";
+        }
+        .result{
+            color:green;
+            padding: "em 0";
+        }
+    </style>
 </head>
 <body>
     <h1>IMC</h1>
@@ -19,61 +29,71 @@
         
         const button = document.getElementById('btn')
         button.addEventListener('click', calcIMC)
-        const weightheight = document.getElementById('height')
+        const height = document.getElementById('height')
         const weight = document.getElementById('weight')
         const result = document.getElementById('result')
 
-        height.style.display = 'block'
-        height.style.width = '50%'
-        height.style.padding = '.4rem .75rem'
-        height.style.fontSize = '1rem'
-        height.style.color = '#494949'
-        height.style.borderRadius = '.25rem'
-        height.style.border = '1 px solid #cecece'
+        function setStyle(){
+            height.style.display = 'block'
+            height.style.width = '50%'
+            height.style.padding = '.4rem .75rem'
+            height.style.fontSize = '1rem'
+            height.style.color = '#494949'
+            height.style.borderRadius = '.25rem'
+            height.style.border = '1 px solid #cecece'
 
-        button.style.display = 'inline-block'
-        button.style.fontWeight = '400'
-        button.style.border = '1px solid transparent'
-        button.style.padding = '.4rem .75rem'
-        button.style.fontSize = '1rem'
-        button.style.borderRadius = '.25rem'
-        button.style.background = '#0062cc'
-        button.style.color = 'white'
+            button.style.display = 'block'
+            button.style.fontWeight = '400'
+            button.style.border = '1px solid transparent'
+            button.style.padding = '.4rem .75rem'
+            button.style.fontSize = '1rem'
+            button.style.borderRadius = '.25rem'
+            button.style.background = '#0062cc'
+            button.style.color = 'white'
 
-        weight.style.display = 'block'
-        weight.style.width = '50%'
-        weight.style.padding = '.4rem .75rem'
-        weight.style.fontSize = '1rem'
-        weight.style.color = '#494949'
-        weight.style.borderRadius = '.25rem'
-        weight.style.border = '1 px solid #cecece'
+            weight.style.display = 'block'
+            weight.style.width = '50%'
+            weight.style.padding = '.4rem .75rem'
+            weight.style.fontSize = '1rem'
+            weight.style.color = '#494949'
+            weight.style.borderRadius = '.25rem'
+            weight.style.border = '1 px solid #cecece'
+        }
+        
 
         function calcIMC(){
-            
+            alert( height.value )
+            alert( weight.value )
+            if(height.value == '' || weight.value == ''){
+                result.innerHTML =  `<span class="error">Invalid Inputs</span>`
+            }else{
+
             const IMC  = ( weight.value / (height.value*height.value) )
            
-            alert(IMC)
+            
             if(IMC <18){
-                result.innerHTML =  `<p>Resultado : ${IMC} = Abaixo do peso ideal !</p>`
+                result.innerHTML =  `<p class="result">Resultado : ${IMC} = Abaixo do peso ideal !</p>`
 
             }else if( IMC >18 && IMC < 25){
 
-                result.innerHTML =  `<p>Resultado : ${IMC} = Peso ideal !</p>`
+                result.innerHTML =  `<p class="result">Resultado : ${IMC} = Peso ideal !</p>`
 
             }else if(IMC > 25 && IMC < 30){
 
-                result.innerHTML =  `<p>Resultado : ${IMC} = Acima do Peso !</p>`
+                result.innerHTML =  `<p class="result">Resultado : ${IMC} = Acima do Peso !</p>`
 
             }else if(IMC > 30 && IMC < 40){
 
-                result.innerHTML =  `<p>Resultado : ${IMC} = Muito acima do peso !</p>`
+                result.innerHTML =  `<p class="result">Resultado : ${IMC} = Muito acima do peso !</p>`
 
             }else if (IMC > 40){
 
-                result.innerHTML =  `<p>Resultado : ${IMC} = Obesidade Mórbida !</p>`
+                result.innerHTML =  `<p class="result">Resultado : ${IMC} = Obesidade Mórbida !</p>`
 
-            }    
+            }  
+            }  
         }
+        setStyle()
     </script>
 </body>
 </html>
