@@ -6,6 +6,33 @@
     <title>Document</title>
 </head>
 <body>
-    
+    <p id="textSon">Hello from School of Net</p>
+    <p id="textHello">Hello Word !</p>
+    <input type="text" name="email">
+    <!-- <input type="text" name="email"> -->
+     <script>
+         //getElementsByTagName retorna array com todas as tags que estiverem no body iguais a q/ foi informada como parâmetro
+        const p = document.getElementsByTagName('p')
+        // console.log(p)
+        //console.log(p[0].textContent)
+       
+        // getElementById retorna apenas o elemento e Ñ um array, logo o acesso de dá de forma mais simples.
+        const text01 = document.getElementById('textSon')
+        //console.log(text01)
+        //console.log(text01.textContent)
+
+        //getElementsByName retorna um array com todas as tags q/ tiverem o conteúdo do atributo name passado como parâmetro dentro de body.
+        const email = document.getElementsByName('email')
+        console.log(email[0].nodeName)
+
+        let button = document.createElement('button')
+        let attr = document.createAttribute('class')
+        attr.value = 'customize class'
+        let text = document.createTextNode('Clique Aqui !')
+        button.setAttributeNode(attr)
+        button.appendChild(text)
+        document.body.appendChild(button)
+        document.body.removeChild(document.getElementById('textHello'))
+    </script>
 </body>
 </html>
